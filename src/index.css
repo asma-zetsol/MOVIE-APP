@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+html,body{
+    overflow-x: hidden;
+}
+body{
+  background-color: #111;
+}
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.overflowHide{
+    overflow:hidden !important;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+html {
+    scroll-behavior: smooth;
+  }
+  .path {
+    stroke:white;
+    stroke-linecap: round;
+    animation: dash 1.5s ease-in-out infinite;
+}
+  @keyframes dash {
+    0% {
+        stroke-dasharray: 1, 150;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -35;
+    }
+    100% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -124;
+    }
+}
+   .moviesGradient{
+    /* global 94%+ browsers support */
+    background: linear-gradient(90deg, rgba(46, 46, 39, 1) 1%, rgba(223, 31, 51, 1) 50%, rgba(16, 12, 16, 1) 100%);
+   }
+   .react-select-container {
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+  }
+  
+  /* .filters .react-select-container.genresDD {
+    width: 100%;
+  } */
+  
+  .filters .react-select-container.genresDD {
+    max-width: 500px;
+    min-width: 250px;
+  }
+  .filters .react-select-container.sortbyDD {
+    min-width: 250px;
+    max-width: 500px;
+    flex-shrink: 0;
+  }
+  
+  .filters .react-select-container .react-select__control {
+    border: 0;
+    outline: 0;
+    box-shadow: none;
+    background-color: white;
+    border-radius: 20px;
+  }
+  
+  .filters .react-select-container .react-select__control .react-select__value-container,
+  .filters .react-select-container .react-select__control .react-select__input-container {
+    color: black;
+    margin: 0 10px;
+  }
+  
+  .filters .react-select-container .react-select__control .react-select__single-value {
+    color: black;
+    background-color: indianred;
+    border-radius: 10px;
+    padding: 2px;
+  }
+  
+  .filters .react-select-container .react-select__control .react-select__multi-value {
+    background-color: indianred;
+    border-radius: 10px;
+  }
+  
+  .filters .react-select-container .react-select__control .react-select__multi-value .react-select__multi-value__label {
+    color: black;
+  }
+  
+  .filters .react-select-container .react-select__control .react-select__multi-value .react-select__multi-value__remove {
+    background-color: transparent;
+    padding: 0;
+    color: white;
+    cursor: pointer;
+    width: 30px;
+  }
+  
+  .filters .react-select-container .react-select__control .react-select__multi-value .react-select__multi-value__remove:hover {
+    opacity: 0.5;
+  }
+  
+  .filters .react-select-container .react-select__menu {
+    /* top: 40px; */
+    margin: 0;
+    padding: 0;
+  }
+  .loadingSkeleton{
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin: 0;
+    padding: 0;
+  }
+@media (max-width:768px){
+    .sortbyDD {
+        width: 100%;
+        flex-shrink: 0;
+    }
+    .genresDD {
+        width: 100%;
+    }
+    .filters{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+    }
+    .loadingSkeleton{
+        gap: 20px;
+        overflow-y: hidden;
+        margin-right: -20px;
+        margin-left: -20px;
+        padding: 0 20px;
+    }
+}
+.elipsis{
+    text-overflow: ellipsis; 
+}
+.fade{
+    height: 7.4rem;
+    background-image: linear-gradient(180deg,transparent,rgba(37,37,37,0.61),#111);
+    position: absolute;
+}
+.opacity-layer {
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(
+        360deg,
+        transparent,
+        black
+    );
+    position: absolute;
+    bottom: -220px;
+    left: 0;
+    /* border:1px solid red; */
+}
+.skeleton {
+    position: relative;
+    overflow: hidden;
+    background-color: rgb(24, 24, 25);
+  }
+  
+  .skeleton::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background-image: linear-gradient(
+      90deg,
+      rgba(131, 137, 146, 0),
+      rgba(32, 34, 38, 0.2) 20%,
+      rgba(62, 59, 59, 0.5) 60%,
+      rgba(66, 68, 69, 0)
+    );
+    animation: shimmer 2s infinite;
+    content: "";
+  }
+  
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  .lazy-load-image-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .lazy-load-image-background img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+  }
+  .shadow{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+     }
+     .shadowX{
+      box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+     }
