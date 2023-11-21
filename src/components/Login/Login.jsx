@@ -80,6 +80,7 @@ function Login() {
     <>
     <Header />
     <div className='absolute w-full'>
+        //background of login and sign up page
         <img src={BG_URL} className="h-screen w-full sm:block hidden " alt='logo'/>
     </div>    
         <div className='flex items-center justify-center h-screen mt-6 bg-black'>
