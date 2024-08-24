@@ -6,9 +6,6 @@ const headers = {
 const BASE_URL = "https://api.themoviedb.org/3"
 export const fetchDataFromapi = async (url,params) => {
     try {
-      // const response = await fetch(`https://api.themoviedb.org/3${url}`,
-      //     API_OPTIONS
-      // );
       const { data } = await axios.get(BASE_URL + url, {
         headers,
         params,
